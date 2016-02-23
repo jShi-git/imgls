@@ -1,6 +1,6 @@
 {
   "name": "imgls",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Provides an augmented directory listing that includes a thumbnail of each image in a directory.",
   "bin": "imgls",
   "scripts": {
