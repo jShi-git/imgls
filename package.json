@@ -1,0 +1,24 @@
+{
+  "name": "imgls",
+  "version": "1.0.1",
+  "description": "Provides an augmented directory listing that includes a thumbnail of each image in a directory.",
+  "bin": "imgls",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jShi-git/imgls.git"
+  },
+  "keywords": [
+    "imgls",
+    "thumbnail",
+    "term"
+  ],
+  "author": "stuart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jShi-git/imgls/issues"
+  },
+  "homepage": "https://github.com/jShi-git/imgls#readme"
+}
