@@ -1,6 +1,6 @@
 {
   "name": "imgls",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides an augmented directory listing that includes a thumbnail of each image in a directory.",
   "bin": "imgls",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/jShi-git/imgls.git"
   },
   "engines": {
-        "node": ">=0.10.0"
+    "node": ">=0.10.0"
   },
   "files": [
     "imgls"
