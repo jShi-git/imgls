@@ -10,13 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/jShi-git/imgls.git"
   },
+  "engines": {
+        "node": ">=0.10.0"
+  },
+  "files": [
+    "imgls"
+  ],
   "keywords": [
     "imgls",
     "thumbnail",
     "term"
   ],
   "author": "stuart",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jShi-git/imgls/issues"
   },
