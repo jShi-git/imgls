@@ -2,7 +2,7 @@
 
  > Provides an augmented directory listing that includes a thumbnail of each image in a directory.
 
-![imgls](https://ooo.0o0.ooo/2016/02/19/56c6b1d80c800.png)
+![imgls](https://cloud.githubusercontent.com/assets/3771576/13255653/fa663670-da81-11e5-8010-ad3122eb97a2.png)
 
 ## Install
 
