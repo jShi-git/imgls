@@ -20,6 +20,23 @@ function print_st() {
 }
 
 function list_file() {
+  direct=$1
+  sub=$2
+  for file in $(ls $direct)
+  do
+    if [ ! -d $file ]; then
+      if [ $sub ]; then
+        display_img "$direct/$file"
+      else
+        display_img "$file"
+      fi
+    else
+      ls -dl "$file"
+    fi
+  done
+}
+
+function display_img() {
   fn=$1
   dims=$(php -r '$a = getimagesize("$argv[1]"); if ($a==FALSE) exit(1); else { echo $a[0] . "x" .$a[1]; exit(0); }' "$fn")
   rc=$?
@@ -32,17 +49,6 @@ function list_file() {
     base64 < "$fn"
     print_st
     if [ x"$TERM" == "xscreen" ] ; then
-      # This works in plain-old tmux but does the wrong thing in iTerm2's tmux
-      # integration mode. tmux doesn't know that the cursor moves when the
-      # image code is sent, while iTerm2 does. I had to pick one, since
-      # integration mode is undetectable, so I picked the failure mode that at
-      # least produces useful output (there is just too much whitespace in
-      # integration mode). This could be fixed by not moving the cursor while
-      # in integration mode. A better fix would be for tmux to interpret the
-      # image sequence, though.
-      #
-      # tl;dr: If you use tmux in integration mode, replace this with the printf
-      # from the else clause.
       printf '\033[4C\033[Bx'
     else
       printf '\033[A'
@@ -55,14 +61,15 @@ function list_file() {
 }
 
 if [ $# -eq 0 ]; then
-  for fn in *
-  do
-     list_file "$fn"
-  done < <(ls -ls)
+  list_file "./"
 else
   for fn in "$@"
   do
-     list_file "$fn"
+    if [ ! -d $fn ]; then
+      list_file "$fn"
+    else
+      list_file "$fn" "sub"
+    fi
   done
 fi
 
